@@ -1,6 +1,15 @@
 <?php
 add_action( 'admin_menu', 'wp_sms_menu' );
 
+/**
+ * wp_sms_menu function.
+ *
+ * @access public
+ * @return void
+ */
+
+if ( ! function_exists('wp_sms_menu')) {
+
 function wp_sms_menu(){
 
   $page_title = 'WP SMS Notfications';
@@ -21,7 +30,18 @@ function wp_sms_menu(){
 
 
 add_action( 'admin_init', 'update_wp_sms_settings' );
-}
+
+	}
+} //exists check
+
+/**
+ * update_wp_sms_settings function.
+ *
+ * @access public
+ * @return void
+ */
+
+if ( ! function_exists('update_wp_sms_settings')) {
 
 function update_wp_sms_settings() {
 	register_setting( 'wp_sms_settings', 'wp_sms_on_post_publish' );
@@ -31,22 +51,34 @@ function update_wp_sms_settings() {
 	register_setting( 'wp_sms_settings', 'wp_sms_on_plugin_update' );
 	register_setting( 'wp_sms_settings', 'wp_sms_on_plugin_install' );
         register_setting( 'wp_sms_settings', 'wp_sms_on_post_update' );
-}
+		}
+	} //exists check
+
+/**
+ * wp_sms_notifications_menu function.
+ *
+ * @access public
+ * @return void
+ */
+
+if ( ! function_exists('wp_sms_notifications_menu')) {
 
 function wp_sms_notifications_menu(){
 ?>
 <div class="wrap">
-  <h1>WP SMS Notifications configuration</h1>
+  <h1><?php echo __('WP SMS Notifications configuration'); ?></h1>
         <form method="post" action="options.php">
-        <?php settings_fields( 'wp_sms_settings' ); ?>
-	<?php do_settings_sections( 'wp_sms_settings' ); ?>
+
+        <?php 	settings_fields( 'wp_sms_settings' );
+				do_settings_sections( 'wp_sms_settings' ); ?>
+
 	<table class="form-table">
                 <tr valign="top">
-			<th scope="row">Phone number:</th>
+			<th scope="row"><?php echo __('Phone number'); ?>:</th>
                         <td><input type="text" name="wp_sms_phone_number" value="<?php echo get_option('wp_sms_phone_number'); ?>"/></td>
 		</tr>
 		<tr valign="top">
-			<th scope="row">Cell carrier:</th>
+			<th scope="row"><?php echo __('Cell carrier'); ?>:</th>
 			<?php $wp_sms_options_carrier = get_option('wp_sms_carrier'); ?>
 		<td><select name="wp_sms_carrier" selected="<?php echo get_option('wp_sms_carrier'); ?>">
                                 <option value="@sms.3rivers.net" <?php if ( $wp_sms_options_carrier == '@sms.3rivers.net' ) { echo "selected=\"$wp_sms_options_carrier\""; } ?>>3 River Wireless</option>
@@ -114,39 +146,38 @@ function wp_sms_notifications_menu(){
                         </select></td>
 		</tr>
 		<tr valign="top">
-                        <th scope="row">Send SMS when a post is published:</th>
+                        <th scope="row"><?php echo __('Send SMS when a post is published'); ?>:</th>
                         <td><input type="checkbox" name="wp_sms_on_post_publish" value="1" <?php if (get_option('wp_sms_on_post_publish') == '1') { echo 'checked'; }?>/></td>
                 </tr>
                 <tr valign="top">
-                        <th scope="row">Send SMS when a post is updated:</th>
+                        <th scope="row"><?php echo __('Send SMS when a post is updated'); ?>:</th>
                         <td><input type="checkbox" name="wp_sms_on_post_update" value="1" <?php if (get_option('wp_sms_on_post_update') == '1') { echo 'checked'; }?>/></td>
                 </tr>
 		<tr valign="top">
-			<th scope="row">Send SMS when user logs in:</th>
+			<th scope="row"><?php echo __('Send SMS when user logs in'); ?>:</th>
 			 <td><input type="checkbox" name="wp_sms_on_user_login" value="1" <?php if (get_option('wp_sms_on_user_login') == '1') { echo 'checked'; }?>/></td>
 		</tr>
 		<tr valign="top">
-                        <th scope="row">Send SMS when a plugin is installed:</th>
+                        <th scope="row"><?php echo __('Send SMS when a plugin is installed'); ?>:</th>
                          <td><input type="checkbox" name="wp_sms_on_plugin_install" value="1" <?php if (get_option('wp_sms_on_plugin_install') == '1') { echo 'checked'; }?>/></td>
                 </tr>
 		<tr valign="top">
-                        <th scope="row">Send SMS a plugin is updated:</th>
+                        <th scope="row"><?php echo __('Send SMS a plugin is updated'); ?>:</th>
                          <td><input type="checkbox" name="wp_sms_on_plugin_update" value="1" <?php if (get_option('wp_sms_on_plugin_update') == '1') { echo 'checked'; }?>/></td>
                 </tr>
                 </tr>
                 <tr valign="top">
-                        <th scope="row">Send SMS a theme is installed:</th>
+                        <th scope="row"><?php echo __('Send SMS a theme is installed'); ?>:</th>
                          <td><input type="checkbox" name="wp_sms_on_theme_install" value="1" <?php if (get_option('wp_sms_on_theme_install') == '1') { echo 'checked'; }?>/></td>
                 </tr>
                 </tr>
                 <tr valign="top">
-                        <th scope="row">Send SMS a theme is updated:</th>
+                        <th scope="row"><?php echo __('Send SMS a theme is updated'); ?>:</th>
                          <td><input type="checkbox" name="wp_sms_on_theme_update" value="1" <?php if (get_option('wp_sms_on_theme_update') == '1') { echo 'checked'; }?>/></td>
                 </tr>
         </table>
 	<?php submit_button(); ?>
 	</form>
 </div>
-<?php
-}
-?>
+<?php }
+} //exists check
