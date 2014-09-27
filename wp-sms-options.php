@@ -1,4 +1,7 @@
 <?php
+/*
+ * This file controls the options pages which is under Tools > WP SMS Notifications
+ */
 		$directory = plugin_dir_path( __FILE__ );
 		require_once $directory . 'carrier-list.php';
 		add_action( 'admin_menu', 'wp_sms_menu' );
