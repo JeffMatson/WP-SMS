@@ -1,0 +1,11 @@
+/*
+ * CSS for the WP SMS Plugin
+ */
+
+.wp-sms-intro {
+    background: #0b0c0b;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    width: 20%;
+}
+
