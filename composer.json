@@ -1,0 +1,20 @@
+{
+	"name": 		"WP-SMS-Notifications",
+	"description": 	"Automatically sends SMS (text message) notifications when events such as a login, theme, plugin, or post change occurs.",
+	"keywords": 	[ "wordpress", "plugin", "SMS" ],
+	"homepage": 	"https://github.com/JeffMatson/WP-SMS-Notifications",
+	"license": 		"GPLv2",
+
+	"authors": [
+		{
+			"name": 	"Jeff Matson"
+		}
+	],
+
+	"type": "wordpress-plugin",
+
+	"require": {
+		"php": ">=5.3",
+		"composer/installers": "~1.0"
+	}
+}
