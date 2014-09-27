@@ -94,15 +94,15 @@ echo $carrier_select_option;
 <td><input type="checkbox" name="wp_sms_on_plugin_install" value="1" <?php if (get_option('wp_sms_on_plugin_install') == '1') { echo 'checked'; }?>/></td>
 </tr>
 <tr valign="top">
-<th scope="row"><?php _e('Send SMS a plugin is updated'); ?>:</th>
+<th scope="row"><?php _e('Send SMS when a plugin is updated'); ?>:</th>
 <td><input type="checkbox" name="wp_sms_on_plugin_update" value="1" <?php if (get_option('wp_sms_on_plugin_update') == '1') { echo 'checked'; }?>/></td>
 </tr>
 <tr valign="top">
-<th scope="row"><?php _e('Send SMS a theme is installed'); ?>:</th>
+<th scope="row"><?php _e('Send SMS when a theme is installed'); ?>:</th>
 <td><input type="checkbox" name="wp_sms_on_theme_install" value="1" <?php if (get_option('wp_sms_on_theme_install') == '1') { echo 'checked'; }?>/></td>
 </tr>
 <tr valign="top">
-<th scope="row"><?php _e('Send SMS a theme is updated'); ?>:</th>
+<th scope="row"><?php _e('Send SMS when a theme is updated'); ?>:</th>
 <td><input type="checkbox" name="wp_sms_on_theme_update" value="1" <?php if (get_option('wp_sms_on_theme_update') == '1') { echo 'checked'; }?>/></td>
 </tr>
 <?php do_action(wp_sms_extensions_menu); ?>
