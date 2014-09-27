@@ -5,6 +5,7 @@
 		$directory = plugin_dir_path( __FILE__ );
 		require_once $directory . 'carrier-list.php';
 		add_action( 'admin_menu', 'wp_sms_menu' );
+
 		/**
 		* wp_sms_menu function.
 		*
@@ -15,7 +16,7 @@
 		add_submenu_page(
 		'tools.php',
 		__( 'WP SMS Notfications', 'wp-sms-notifications' ),
-		__( 'WP SMS Notifications', 'wp-sms-notifications' ),
+		__( 'WP SMS Notifications Config', 'wp-sms-notifications' ),
 		'manage_options',
 		'wp-sms-notifications',
 		'wp_sms_notifications_menu',
@@ -50,7 +51,8 @@
 		function wp_sms_notifications_menu() {
 		?>
 		<div class="wrap">
-		<h1><?php _e('WP SMS Notifications configuration'); ?></h1>
+		<h1><?php _e('WP SMS Notifications Configuration'); ?></h1>
+		<div class="wp-sms-intro">Welcome to the WP SMS plugin.</div>
 		<form method="post" action="options.php">
 		<?php settings_fields( 'wp_sms_settings' ); ?>
 		<?php do_settings_sections( 'wp_sms_settings' ); ?>

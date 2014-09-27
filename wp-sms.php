@@ -16,7 +16,7 @@ require_once $directory . '/alerts/alerts.php';
 
 
 function load_wp_sms_css() {
-	wp_register_style( 'wp-sms-css', get_template_directory_uri() . 'css/wp-sms.css');
+	wp_register_style( 'wp-sms-css', plugins_url('/css/wp-sms.css', __FILE__) );
 	wp_enqueue_style( 'wp-sms-css' );
 }
 add_action( 'admin_enqueue_scripts', 'load_wp_sms_css' );
