@@ -19,6 +19,7 @@ $wp_sms_carrier_list = array(
 	'Clearnet'                     => '@msg.clearnet.com',
 	'Comcast'                      => '@comcastpcs.textmsg.com',
 	'Corr Wireless Communications' => '@corrwireless.net',
+	'Cricket Wireless'             => '@mms.cricketwireless.net',
 	'Dobson'                       => '@mobile.dobson.net',
 	'Edge Wireless'                => '@sms.edgewireless.com',
 	'Fido'                         => '@fido.ca',
